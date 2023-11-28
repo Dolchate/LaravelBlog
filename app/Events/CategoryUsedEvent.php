@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Events;
+
+use App\Models\Category;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
+
+class CategoryUsedEvent
+{
+    use Dispatchable, SerializesModels;
+
+    public Category $category;
+
+    /**
+     * Create a new event instance.
+     */
+    public function __construct(Category $category)
+    {
+        $this->category = $category;
+    }
+}
